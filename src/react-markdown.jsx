@@ -28,6 +28,7 @@ var ReactMarkdown = React.createClass({
     displayName: 'ReactMarkdown',
 
     propTypes: {
+        parentClassName: React.PropTypes.string,
         className: React.PropTypes.string,
         containerTagName: React.PropTypes.string,
         source: React.PropTypes.string.isRequired,
@@ -99,7 +100,9 @@ var ReactMarkdown = React.createClass({
         var Container = this.props.containerTagName;
 
         return (
-            <Container ref='container' className={this.props.className || ''}></Container>
+            <div className={this.props.parentClassName}>
+                <Container ref='container' className={this.props.className || ''}></Container>
+            </div>
         );
     }
 });
