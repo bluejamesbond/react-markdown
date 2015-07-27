@@ -82,7 +82,7 @@ var ReactMarkdown = React.createClass({
         var reader = new commonmark.Parser(opts);
         var writer = new commonmark.HtmlRenderer(opts);
         var parsed = reader.parse(text);
-        var html = writer.parse(parsed);
+        var html = writer.render(parsed);
 
         React.findDOMNode(this.refs.container).innerHTML = html;
     },
